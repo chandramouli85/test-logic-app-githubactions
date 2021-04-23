@@ -1,6 +1,6 @@
 ---
 name: githubactionslogicapp-Deployment-Pipeline
-#tests
+#test
 on:
   push:
     branches:
