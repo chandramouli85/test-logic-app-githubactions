@@ -7,7 +7,7 @@ on:
       - master
 
 env:
-  RESOURCEGROUP: rajuchandramouli
+  RESOURCEGROUP: az-githubactions-logicapp-dsg
   RESOURCEGROUPLOCATION: East US
   LOGICAPPNAME: testlogicappgithub
   ARMTEMPLATELOCATION : ./LogicApp.json
