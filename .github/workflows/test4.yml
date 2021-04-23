@@ -1,9 +1,10 @@
+---
 name: githubactionslogicapp-Deployment-Pipeline
 #tests4
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   RESOURCEGROUP: rajuchandramouli
