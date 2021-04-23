@@ -4,7 +4,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "workflows_testlogicappgithub_name": {
-        "value": "testlogicappgithub"
+        "value": "deploylogicappgithub"
       }
     }
   }
