@@ -9,7 +9,7 @@ on:
 env:
   RESOURCEGROUP: az-githubactions-logicapp-dsg
   RESOURCEGROUPLOCATION: East US
-  LOGICAPPNAME: testlogicappgithub
+  LOGICAPPNAME: deploylogicappgithub
   ARMTEMPLATELOCATION : ./LogicApp.json
   PARAMETERSFILELOCATION: ./LogicApp.parameters.json
 
