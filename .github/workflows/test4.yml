@@ -24,7 +24,7 @@ jobs:
       - name: Log In To Azure
         uses: Azure/login@v1
         with:
-          creds: ${{secrets.AZURE_CREDENTIALS}}
+          credentials: ${{ secrets.AZURE_CREDENTIALS }}
       
       - name: Validate Deployment
         shell: bash
