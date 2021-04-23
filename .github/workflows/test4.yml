@@ -1,0 +1,45 @@
+name: githubactionslogicapp-Deployment-Pipeline
+#tests4
+on:
+  push:
+    branches:
+      - main
+
+env:
+  RESOURCEGROUP: rajuchandramouli
+  RESOURCEGROUPLOCATION: East US
+  LOGICAPPNAME: testlogicappgithub
+  ARMTEMPLATELOCATION : ./LogicApp.json
+  PARAMETERSFILELOCATION: ./LogicApp.parameters.json
+
+jobs:
+  deploy-to-production:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Log In To Azure
+        uses: Azure/login@v1
+        with:
+          creds: ${{secrets.AZURE_CREDENTIALS}}
+      
+      - name: Validate Deployment
+        shell: bash
+        run: |
+         az deployment group validate \
+         --resource-group ${{env.RESOURCEGROUP}} \
+         --mode Incremental \
+         --template-file ${{env.ARMTEMPLATELOCATION}} \
+         --parameters ${{env.PARAMETERSFILELOCATION}}
+      - name: Deploy Logic App
+        shell: bash
+        run: |
+          az deployment group create \
+          -g ${{env.RESOURCEGROUP}} \
+          --template-file ${{env.ARMTEMPLATELOCATION}} \
+          --parameters ${{env.PARAMETERSFILELOCATION}}
+          
+      - name: Log Out From Azure
+        run: az logout
