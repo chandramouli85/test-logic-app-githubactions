@@ -14,7 +14,7 @@ env:
   PARAMETERSFILELOCATION: ./LogicApp.parameters.json
 
 jobs:
-  deploy-to-production:
+  deploy-to-logicapps:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,7 +24,7 @@ jobs:
       - name: Log In To Azure
         uses: Azure/login@v1
         with:
-          credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
       
       - name: Validate Deployment
         shell: bash
