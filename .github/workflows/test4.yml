@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Log In To Azure
-        uses: Azure/actions/login@v1
+        uses: Azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           enable-AzPSSession: true
